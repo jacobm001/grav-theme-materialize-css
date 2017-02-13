@@ -1,0 +1,27 @@
+name: Materialize Css
+version: 0.1.0
+description: A theme built on MaterializeCSS
+icon: rebel
+author:
+  name: Jacob Mastel
+  email: jacob@mastel.org
+homepage: https://github.com/jacob-mastel/grav-theme-materialize-css
+demo: http://demo.yoursite.com
+keywords: grav, theme, etc
+bugs: https://github.com/jacob-mastel/grav-theme-materialize-css/issues
+readme: https://github.com/jacob-mastel/grav-theme-materialize-css/blob/develop/README.md
+license: MIT
+
+form:
+  validation: loose
+  fields:
+    dropdown.enabled:
+        type: toggle
+        label: Dropdown in Menu
+        highlight: 1
+        default: 1
+        options:
+          1: PLUGIN_ADMIN.ENABLED
+          0: PLUGIN_ADMIN.DISABLED
+        validate:
+          type: bool
