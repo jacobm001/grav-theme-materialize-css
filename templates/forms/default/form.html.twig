@@ -1,0 +1,41 @@
+{% if form.message %}<div class="alert">{{ form.message }}</div>{% endif %}
+{% set multipart = '' %}
+{% set method = form.method|upper|default('POST') %}
+{% for field in form.fields %}
+    {% if (method == 'POST' and field.type == 'file') %}
+        {% set multipart = ' enctype="multipart/form-data"' %}
+    {% endif %}
+{% endfor %}
+
+<div class="container">
+  <div class="row">
+    <div class="z-depth-5 col s12 m12 l12">
+      <div class="section">
+        <form name="{{ form.name }}"
+              action="{{ form.action ? base_url ~ form.action : page.url }}"
+              method="{{ method }}"{{ multipart }}>
+      {#   <h1>{{ form.name|replace('-', ' ')|titleize }}</h1> #}
+        {{ page.content }}
+
+        {% for field in form.fields %}
+            {% set value = form.value(field.name) %}
+            {% include "forms/fields/#{field.type}/#{field.type}.html.twig" %}
+        {% endfor %}
+
+        	<div class="buttons">
+        	{% for button in form.buttons %}
+              {# |default('btn-default') #}
+        	    <a 
+                {% block button_classes %}
+                class="{{ "waves-effect waves-light btn" ~ button.classes }}"
+                {% endblock %}
+                type="{{ button.type|default('submit') }}">{{ button.value|t|default('Submit') }}</a>
+        	{% endfor %}
+        	</div>
+
+          {{ nonce_field('form', 'form-nonce') }}
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
