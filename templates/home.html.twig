@@ -2,38 +2,28 @@
 
 {% block content %}
 <div class="container">
-	<div class="row">
-		<div class="z-depth-5 col s12 m12 l12">
-			<div class="section">
-				<div class="row">
-					<div class="col l4">
-						<p>Hello, World</p>
+	<div class="section">
+		
+		<div class="row z-depth-1">
+			<div class="col s12 m12 l12">
+				<div class"row valign-wrapper">
+					<div class="col s4">
+						<img src="{{ page.media['profile.jpg'].url }}" class="circle responsive-img">
 					</div>
 
-					<div class="col l4">
-						<table>
-							<tr>
-								<td>Github</td><td>Jacobm001</td>
-							</tr>
-							<tr>
-								<td>Twitter</td><td>Jacobm001</td>
-							</tr>
-							<tr>
-								<td>StackExchange</td><td>Jacobm001</td>
-							</tr>
-							</table>
-					</div>
-
-					<div class="col l4">
-						<p>Goodbye, World</p>
+					<div class="col s8">
+						<span>
+							<h3 class="black-text center-align">Jacob Mastel</h3>
+							<h5 class="grey-text center-align text-darken-2">Programmer</h5>
+						</span>
 					</div>
 				</div>
+			</div>
+		</div>
 
-				<div class="row">
-					<div class="col l12">
-						{{ page.content }}
-					</div>
-				</div>
+		<div class="row z-depth-1">
+			<div class="col s12 m12 l12">
+				{{ page.content }}
 			</div>
 		</div>
 	</div>
