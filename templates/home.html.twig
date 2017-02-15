@@ -1,0 +1,41 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="z-depth-5 col s12 m12 l12">
+			<div class="section">
+				<div class="row">
+					<div class="col l4">
+						<p>Hello, World</p>
+					</div>
+
+					<div class="col l4">
+						<table>
+							<tr>
+								<td>Github</td><td>Jacobm001</td>
+							</tr>
+							<tr>
+								<td>Twitter</td><td>Jacobm001</td>
+							</tr>
+							<tr>
+								<td>StackExchange</td><td>Jacobm001</td>
+							</tr>
+							</table>
+					</div>
+
+					<div class="col l4">
+						<p>Goodbye, World</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col l12">
+						{{ page.content }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
