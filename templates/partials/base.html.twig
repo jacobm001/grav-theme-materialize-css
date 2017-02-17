@@ -38,7 +38,8 @@
 {% endblock %}
 
 {% block body %}
-		{% block content %}{% endblock %}
+	{% block content %}{% endblock %}
+	{{ assets.js('content') }}
 {% endblock %}
 
 {% block footer %}
