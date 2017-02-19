@@ -8,5 +8,5 @@ $.get("https://api.stackexchange.com/2.2/users/1163298/associated", function(dat
 	}
 
 	rep = (rep + '').replace(/(\d)(?=(\d{3})+$)/g, '$1,');
-	$("#reputation").text(rep);
+	$("#reputation").text('Reputation: ' + rep);
 });
