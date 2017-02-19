@@ -12,10 +12,9 @@
 					</div>
 
 					<div class="col s8">
-						<span> {{ dump(page.header.person) }}
-							<h3 class="black-text center-align">{{ page.header.person.name }}</h3>
-							<h5 class="grey-text center-align text-darken-1">{{ page.header.person.title }}</h5>
-						</span>
+						<h3 class="black-text center-align">{{ page.header.person.name }}</h3>
+						<h5 class="grey-text center-align text-darken-1">{{ page.header.person.title }}</h5>
+						{{ page.content }}
 					</div>
 				</div>
 			</div>
@@ -61,7 +60,7 @@
 
 		<div class="row z-depth-1">
 			<div class="col s12 m12 l12">
-				{{ page.content }}
+				{# {{ page.content }} #}
 			</div>
 		</div>
 	</div>
