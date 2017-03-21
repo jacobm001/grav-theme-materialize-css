@@ -1,0 +1,31 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+
+{% set paste = GetPaste(page.paste_number) %}
+
+{{ dump(page.replyto) }}
+<div class="container">
+	<div class="row">
+		<div class="col s12">
+			<h1>{{ paste.title }}</h1>
+			<h4>Lang: {{ paste.lang }}</h4>
+
+			{% if paste.replyto != "0" %}
+				<h4>By: {{ paste.author }}</h4>
+				<h4>Created: {{ paste.created|date("m-d-Y") }} in response to <a href="/pastebin/view/{{ paste.replyto }}">{{ paste.replyto }}</a></h4>
+			{% else %}
+				<h4>By: {{ paste.author }}</h4>
+				<h4>Created: {{ paste.created|date("m-d-Y") }}</h4>
+			{% endif %}
+
+			<pre>
+				<code>
+{{ paste.raw }}
+				</code>
+			</pre>
+		
+		</div>
+	</div>
+</div>
+{% endblock %}
