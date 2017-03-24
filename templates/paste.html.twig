@@ -19,13 +19,12 @@
 				<h4>Created: {{ paste.created|date("m-d-Y") }}</h4>
 			{% endif %}
 
-			<pre>
-				<code>
-{{ paste.raw }}
-				</code>
-			</pre>
-		
+			<pre><code class="language-{{paste.lang}} line-numbers language-markup">{{ paste.raw }}</code></pre>
 		</div>
 	</div>
 </div>
+
+{% do assets.addCss('theme://css/prism.css', {group: 'content'}) %}
+{% do assets.addJs('theme://js/prism.js', {group: 'content'}) %}
+
 {% endblock %}
