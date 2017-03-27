@@ -4,25 +4,18 @@
 
 {% set paste = GetPaste(page.paste_number) %}
 
-{{ dump(page.replyto) }}
-<div class="container">
-	<div class="row">
-		<div class="col s12">
-			<h1>{{ paste.title }}</h1>
-			<h4>Lang: {{ paste.lang }}</h4>
+<h1>{{ paste.title }}</h1>
+<h4>Lang: {{ paste.lang }}</h4>
 
-			{% if paste.replyto != "0" %}
-				<h4>By: {{ paste.author }}</h4>
-				<h4>Created: {{ paste.created|date("m-d-Y") }} in response to <a href="/pastebin/view/{{ paste.replyto }}">{{ paste.replyto }}</a></h4>
-			{% else %}
-				<h4>By: {{ paste.author }}</h4>
-				<h4>Created: {{ paste.created|date("m-d-Y") }}</h4>
-			{% endif %}
+{% if paste.replyto != "0" %}
+	<h4>By: {{ paste.author }}</h4>
+	<h4>Created: {{ paste.created|date("m-d-Y") }} in response to <a href="/pastebin/view/{{ paste.replyto }}">{{ paste.replyto }}</a></h4>
+{% else %}
+	<h4>By: {{ paste.author }}</h4>
+	<h4>Created: {{ paste.created|date("m-d-Y") }}</h4>
+{% endif %}
 
-			<pre><code class="language-{{paste.lang}} line-numbers language-markup">{{ paste.raw }}</code></pre>
-		</div>
-	</div>
-</div>
+<pre><code class="language-{{paste.lang}} line-numbers language-markup">{{ paste.raw }}</code></pre>
 
 {% do assets.addCss('theme://css/prism.css', {group: 'content'}) %}
 {% do assets.addJs('theme://js/prism.js', {group: 'content'}) %}

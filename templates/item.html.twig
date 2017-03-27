@@ -1,21 +1,18 @@
-{% embed 'partials/base.html.twig' %}
+{% extends 'partials/base.html.twig' %}
 
-	{% block content %}
+{% block content %}
 
-		<div class="container">
-			<div class="row">
-				<div class="col s12 m8 l8">
-					<h1>{{ page.title }}</h1>
-					{{ content }}
-				</div>
+<div class="row">
+	<div class="col s12 m8 l8">
+		<h1>{{ page.title }}</h1>
+		{{ content }}
+	</div>
 
-				<div class="col m4 l4">
-					<div class="row">
-						{% include 'partials/blog_sidebar.html.twig' %}
-					</div>
-				</div>
-			</div>
+	<div class="col m4 l4">
+		<div class="row">
+			{% include 'partials/blog_sidebar.html.twig' %}
 		</div>
+	</div>
+</div>
 
-	{% endblock %}
-{% endembed %}
+{% endblock %}
