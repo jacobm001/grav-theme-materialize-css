@@ -1,0 +1,20 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+<h1>Family Wishlists</h1>
+
+{% for person in page.header.wishlists %}
+<div class="card">
+	<div class="card-stripe {{ person.color }}"></div>
+	<div class="card-content">
+		<span class="card-title">{{ person.name }}</span>
+		<ul>
+			{% for list in person.lists %}
+			<li><a href="{{ list.url }}">{{ list.title }}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>
+{% endfor %}
+
+{% endblock %}
