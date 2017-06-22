@@ -1,0 +1,36 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+
+{% set t_office   = getOfficeTemperature() %}
+{% set t_location = getLocationTemperature() %}
+
+<div class="row">
+	<div class="col s12 l6">
+		<h3>The Office</h3>
+		<p>Current Temperature: {{ t_office }}</p>
+
+		<p>
+			<i class="fa fa-snowflake-o" aria-hidden="true"></i><br/>
+			<i class="fa fa-fire" aria-hidden="true"></i>
+		</p>
+	</div>
+
+	<div class="col s12 l6">
+		<h3>Outside</h3>
+		<p>Current Temperature: {{ t_location }}</p>
+		
+		<p>
+			<i class="fa fa-snowflake-o" aria-hidden="true"></i><br/>
+			<i class="fa fa-fire" aria-hidden="true"></i>
+		</p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col s12">
+		{{ content }}
+	</div>
+</div>
+
+{% endblock %}
