@@ -6,24 +6,35 @@
 {% set t_location = getLocationTemperature() %}
 
 <div class="row">
-	<div class="col s12 l6">
-		<h3>The Office</h3>
-		<p>Current Temperature: {{ t_office }}</p>
-
-		<p>
-			<i class="fa fa-snowflake-o" aria-hidden="true"></i><br/>
-			<i class="fa fa-fire" aria-hidden="true"></i>
-		</p>
+	<div class="col s12 m6">
+		<h4>The Office</h4>
+		
+		Current Temperature: {{ t_office|round(1, 'floor') }}
+		
+		<div>
+			<span>Today's Records: </span>
+			<span>
+				<i class="fa fa-snowflake-o" style="color: blue;" aria-hidden="true"> </i>
+			</span>
+			<span>
+				<i class="fa fa-fire" style="color: red;" aria-hidden="true"> </i>
+			</span>
+		</div>
 	</div>
 
-	<div class="col s12 l6">
-		<h3>Outside</h3>
+	<div class="col s12 m6">
+		<h4>Outside</h4>
 		<p>Current Temperature: {{ t_location }}</p>
 		
-		<p>
-			<i class="fa fa-snowflake-o" aria-hidden="true"></i><br/>
-			<i class="fa fa-fire" aria-hidden="true"></i>
-		</p>
+		<div>
+			<span>Today's Records: </span>
+			<span>
+				<i class="fa fa-snowflake-o" style="color: blue;" aria-hidden="true"> </i>
+			</span>
+			<span>
+				<i class="fa fa-fire" style="color: red;" aria-hidden="true"> </i>
+			</span>
+		</div>
 	</div>
 </div>
 
