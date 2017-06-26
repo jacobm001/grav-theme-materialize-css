@@ -11,5 +11,5 @@
 })(jQuery); // end of jQuery name space
 
 $(document).ready(function() {
-    $('select').material_select();
+    $('.container').find('select').material_select();
 });
