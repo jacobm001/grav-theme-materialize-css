@@ -9,7 +9,9 @@
 	<div class="col s12 m6">
 		<h4>The Office</h4>
 		
-		Current Temperature: {{ t_office|round(1, 'floor') }}
+		<div>
+			Current Temperature: {{ t_office|round(1, 'floor') }}
+		</div>
 		
 		<div>
 			<span>Today's Records: </span>
@@ -24,7 +26,10 @@
 
 	<div class="col s12 m6">
 		<h4>Outside</h4>
-		<p>Current Temperature: {{ t_location }}</p>
+		
+		<div>
+			Current Temperature: {{ t_location }}
+		</div>
 		
 		<div>
 			<span>Today's Records: </span>
