@@ -32,3 +32,15 @@
 @media only screen and (max-height:700px) {
     .featherlight-image { height: 400px; }
 }
+
+.overflow-cell {
+	overflow: hidden;
+	/*width:200px;*/
+	/*height: 200px;*/
+}
+
+.cell-size {
+	/*position: relative;*/
+	/*left: -50%;*/
+	/*top: -50%;*/
+}

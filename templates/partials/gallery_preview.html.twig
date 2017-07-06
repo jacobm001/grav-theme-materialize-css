@@ -1,8 +1,8 @@
 <div class="row">
 	<h3>{{ page.title }}</h3>
 	{% for img in page.media.images %}
-	<div class="col s12 m4 l2">
-		{{ img.lightbox('','').cropZoom(300,300).html('image', '', 'responsive-img') }}
+	<div class="col s12 m4">
+		{{ img.lightbox('', '').cropZoom(500,500).html('image', '', 'responsive-img') }}
 	</div>
 	{% endfor %}
 </div>
