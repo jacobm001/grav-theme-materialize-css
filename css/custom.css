@@ -67,3 +67,9 @@ background-size: 70px 120px;
 	padding: 20px;
 	min-height: calc(100vh - 64px);
 }
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 100%
+   }
+  }
