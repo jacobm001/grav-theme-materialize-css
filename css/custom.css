@@ -63,7 +63,7 @@ background-size: 70px 120px;
 }
 
 .page {
-	background-color: white;
+	background-color: whitesmoke;
 	padding: 20px;
 	min-height: calc(100vh - 64px);
 }
