@@ -69,11 +69,14 @@ html {
 
 .page {
 	background-color: whitesmoke;
-	padding: 20px;
+	padding-top: 30px;
+	padding-bottom: 20px;
+	padding-left: 35px;
+	padding-right: 35px;
 	min-height: calc(100vh - 64px);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 992px) {
 	.container {
 		width: 100%
 	}
@@ -99,6 +102,8 @@ html {
 	background-color: transparent !important;
 }
 
-/*.no-background collection-item {
-	background-color: transparent !important;
-}*/
+.card-avatar {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	max-width: 20% !important;
+}
