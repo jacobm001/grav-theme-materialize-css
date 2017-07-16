@@ -1,0 +1,13 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+<div class="gallery-container {{ page.header.class }}">
+  {{ unite_gallery(page.media.images, '{"gallery_theme":"' ~ page.header.unitegallery.gallery_theme ~ '"}') }}
+</div>
+
+<script type="text/javascript">
+  jQuery(document).ready(function(){
+    jQuery("#unite-gallery").unitegallery({"tiles_type":"justified","gallery_theme":"tiles"});
+  });
+</script>
+{% endblock %}
