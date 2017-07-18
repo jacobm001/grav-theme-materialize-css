@@ -46,7 +46,8 @@
 }
 
 html {
-	background-color: #37474f;
+	/*background-color: #37474f;*/
+	background-color: #eeeeee;
 	background-size: 70px 120px;
 	background-image: 
 		linear-gradient(
