@@ -1,16 +1,26 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
+{% set content = page.content|slice(page.summary|length) %}
 
 <div class="row">
-	<div class="col s12 m8 l8">
-		<h1>{{ page.title }}</h1>
-		{{ content }}
+	<div class="col s12">
+		<div class="card-panel">
+			<h2>{{ page.title }}</h2>
+		</div>
 	</div>
 
-	<div class="col m4 l4">
-		<div class="row">
-			{% include 'partials/blog_sidebar.html.twig' %}
+	<div class="col s12">
+		<span class="chip">Published: {{ page.date|date('F j, Y') }}</span>
+
+		{% for tag in page.taxonomy.tag %}
+		<span class="chip right">{{ tag }}</span>
+		{% endfor %}
+	</div>
+
+	<div class="col s12">
+		<div class="card-panel">
+			{{ content }}
 		</div>
 	</div>
 </div>
