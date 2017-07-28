@@ -42,6 +42,25 @@ html {
 	.page {
 		padding: 15px;
 	}
+
+	.blog-content img {
+		max-width: 100%;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (min-width: 993px) {
+	.blog-content img {
+		float: right;
+		max-width: 50%;
+		margin: 0 auto;
+	}
+}
+
+.blog-avatar {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	max-width: 60% !important;
 }
 
 .center-action a {
@@ -74,12 +93,6 @@ html {
 	height: 100%;
 }
 
-.blog-avatar {
-	padding-top: 20px;
-	padding-bottom: 20px;
-	max-width: 40% !important;
-}
-
 blockquote {
 	border-left: 5px solid #b388ff !important;
 	max-width: 90%;
@@ -89,3 +102,4 @@ blockquote {
 blockquote blockquote {
 	margin: 20px 0;
 }
+

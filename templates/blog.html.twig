@@ -6,7 +6,7 @@
 {% block content %}
 
 	<div class="row" style="height: 100%">
-		<div class="col s12 m9 l7 ">
+		<div class="col s12 m8">
 			<div class="row">
 				{% for child in collection %}
 					{% include 'partials/blog_item.html.twig' with { 'blog':page, 'page':child, 'truncate':true } %}
@@ -14,8 +14,8 @@
 			</div>
 		</div>
 
-		<div class="col m3 l5">
-			<div class="row s12">
+		<div class="col m4">
+			<div class="card-panel">
 				{% include 'partials/blog_sidebar.html.twig' %}
 			</div>
 		</div>
