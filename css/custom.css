@@ -51,8 +51,8 @@ html {
 
 @media screen and (min-width: 993px) {
 	.blog-content img {
-		float: right;
-		max-width: 50%;
+		display: block;
+		max-width: 75%;
 		margin: 0 auto;
 	}
 }
