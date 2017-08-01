@@ -3,7 +3,6 @@
 }
 
 html {
-	/*background-color: #37474f;*/
 	background-color: #eeeeee;
 	background-size: 70px 120px;
 	background-image: 
@@ -23,6 +22,7 @@ html {
 			, rgba(0,0,0,.1) 75%
 			, rgba(0,0,0,.1)
 		);
+	background-attachment: fixed;
 }
 
 .page {
