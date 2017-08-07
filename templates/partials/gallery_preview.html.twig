@@ -1,8 +1,14 @@
-<div class="row">
-	<h3>{{ page.title }}</h3>
-	{% for img in page.media.images %}
-	<div class="col s12 m4">
-		{{ img.lightbox('', '').cropZoom(500,500).html('image', '', 'responsive-img') }}
+{% set imgs      = page.media.images|slice(0,4) %}
+{% set theme_str = '{"gallery_theme":"' ~ page.header.unitegallery.gallery_theme ~ '"}' %}
+{% set gprev_id  = 'unitegallery-' ~ page.title %}
+
+{{ debug(imgs) }}
+{{ debug(theme_str) }}
+{{ debug(gprev_id) }}
+
+<div class="col s12">
+	<div class="gallery-container {{ page.header.class }}">
+		<h4><a href="{{ page.url }}">{{ page.title }}</a></h4>
+		{{ unite_gallery(imgs, theme_str, gprev_id) }}
 	</div>
-	{% endfor %}
-</div>
+</div>	

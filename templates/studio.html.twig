@@ -7,13 +7,11 @@
 {{ page.content }}
 
 <div class="row">
-	<div class="col s12">
 		{% for child in collection %}
 
 		{% include 'partials/gallery_preview.html.twig' with {'photography':page, 'page':child, 'truncate':true } %}
 
 		{% endfor %}
-	</div>
 </div>
 
 {% endblock %}
