@@ -1,14 +1,20 @@
-{% set imgs      = page.media.images|slice(0,4) %}
+{% set imgs      = page.media.images|slice(0,6) %}
 {% set theme_str = '{"gallery_theme":"' ~ page.header.unitegallery.gallery_theme ~ '"}' %}
 {% set gprev_id  = 'unitegallery-' ~ page.title %}
 
-{{ debug(imgs) }}
-{{ debug(theme_str) }}
-{{ debug(gprev_id) }}
+{% set img_cnt = page.media.images|length %}
 
-<div class="col s12">
-	<div class="gallery-container {{ page.header.class }}">
-		<h4><a href="{{ page.url }}">{{ page.title }}</a></h4>
-		{{ unite_gallery(imgs, theme_str, gprev_id) }}
+<div class="row">
+	<div class="col s12">
+		<h4 style="display: inline">{{ page.title }}</h4>
+		<h6 style="display: inline"><a href="{{ page.url }}">(view all {{ img_cnt }} images)</a></h6>
 	</div>
-</div>	
+</div>
+
+<div class="row">
+	<div class="col s12">
+		<div class="gallery-container {{ page.header.class }}">
+			{{ unite_gallery(imgs, theme_str, gprev_id) }}
+		</div>
+	</div>
+</div>

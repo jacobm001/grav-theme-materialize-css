@@ -1,8 +1,19 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-<div class="gallery-container {{ page.header.class }}">
-  {{ unite_gallery(page.media.images, '{"gallery_theme":"' ~ page.header.unitegallery.gallery_theme ~ '"}') }}
-</div>
+<div class="row">
+	<div class="col s12">
+		<h1>{{ page.title }}</h1>
+	</div>
 
+	<div class="col s12">
+		{{ content }}
+	</div>
+
+	<div class="col s12">
+		<div class="gallery-container {{ page.header.class }}">
+			{{ unite_gallery(page.media.images, '{"gallery_theme":"' ~ page.header.unitegallery.gallery_theme ~ '"}') }}
+		</div>
+	</div>
+</div>
 {% endblock %}
