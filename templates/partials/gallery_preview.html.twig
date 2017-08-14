@@ -10,16 +10,14 @@
 	{% set plural = " image" %}
 {% endif %}
 
-<div class="col s12 m10 offset-m1 xl8 offset-xl2">
-	<div class="card">
-		<div class="card-content">
-			<span class="card-title">{{ page.title }}</span>
-			<div class="gallery-container {{ page.header.class }}">
-				{{ unite_gallery(imgs, theme_str, gprev_id) }}
-			</div>
+<div class="card">
+	<div class="card-content">
+		<span class="card-title">{{ page.title }}</span>
+		<div class="gallery-container {{ page.header.class }}">
+			{{ unite_gallery(imgs, theme_str, gprev_id) }}
 		</div>
-		<div class="card-action">
-			<a href="{{ page.url }}">View all {{ img_cnt ~ plural }}</a>
-		</div>
+	</div>
+	<div class="card-action">
+		<a href="{{ page.url }}">View all {{ img_cnt ~ plural }}</a>
 	</div>
 </div>

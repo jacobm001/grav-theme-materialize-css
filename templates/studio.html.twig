@@ -11,16 +11,13 @@
 				<span class="card-title">{{ page.title }}</span>
 				{{ page.content }}
 			</div>
-			{# <div class="card-action">
-				<a href="{{ page.url }}">Contact Me</a>
-			</div> #}
 		</div>
 	</div>
-</div>
 
-<div class="row">
 {% for child in collection %}
-	{% include 'partials/gallery_preview.html.twig' with {'photography':page, 'page':child, 'truncate':true } %}
+	<div class="col s12 m10 offset-m1 xl8 offset-xl2">
+		{% include 'partials/gallery_preview.html.twig' with {'photography':page, 'page':child, 'truncate':true } %}
+	</div>
 {% endfor %}
 </div>
 
