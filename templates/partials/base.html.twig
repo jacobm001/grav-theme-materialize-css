@@ -23,7 +23,7 @@
 	{{ assets.css() }}
 
 	{% block javascripts %}
-		{% do assets.addJs('jquery', 100) %}
+		{% do assets.addJs('https://code.jquery.com/jquery-2.2.4.min.js', 100) %}
 		{% do assets.addJs('https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js', 99) %}
 		{% do assets.addJs('theme://js/site.js', 98) %}
 	{% endblock %}
