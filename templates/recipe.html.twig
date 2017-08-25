@@ -1,0 +1,32 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+
+<div class="row">
+	<div class="col s12">
+		<h1>{{ recipe.name }}</h1>
+	</div>
+
+	<div class="col s12">
+		<h4>Yields: {{ recipe.yields }}</h4>
+		<h4>Notes:</h4>
+		{{ recipe.notes|markdown }}
+	</div>
+</div>
+
+<div class="row s-reorder">
+	<div class="col s12 m7 move-down">
+		<h3>Directions: </h3>
+		{{ recipe.directions|markdown }}
+	</div>
+
+	<div class="col s12 m5">
+		<h3>Ingredients</h3>
+		<ul class="collection">
+			{% for ingr in recipe.ingredients %}
+				<li class="collection-item">{{ ingr }}</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>
+{% endblock %}
