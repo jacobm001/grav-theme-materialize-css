@@ -34,6 +34,18 @@ html {
 	min-height: calc(100vh - 64px);
 }
 
+.color-facebook {
+	background-color: #365899;
+}
+
+.color-twitter {
+	background-color: #00aced;
+}
+
+.color-reddit {
+	background-color: #ed001c;
+}
+
 @media screen and (max-width: 992px) {
 	.container {
 		width: 100%
