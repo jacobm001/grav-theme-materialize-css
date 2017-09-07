@@ -25,3 +25,11 @@ form:
           0: PLUGIN_ADMIN.DISABLED
         validate:
           type: bool
+    source_option:
+      type: select
+      label: "Get js/css from"
+      default: "local"
+      options:
+        local: "Serve locally"
+        local-min: "Serve minified locally"
+        cdn: "Serve from CDN"

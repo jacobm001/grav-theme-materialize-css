@@ -1,4 +1,22 @@
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+{{ debug(theme_config) }}
+
+{% if theme_config.source_option == "local" %}
+	{% set m_css_source = 'theme://css/materialize.css' %}
+	{% set f_css_source = 'theme://css/font-awesome.css' %}
+	{% set m_js_source = 'theme://js/materialize.js' %}
+
+{% elseif theme_config.source_option == "local-min" %}
+	{% set m_css_source = 'theme://css/materialize.min.css' %}
+	{% set f_css_source = 'theme://css/font-awesome.min.css' %}
+	{% set m_js_source = 'theme://js/materialize.min.js' %}
+
+{% elseif theme_config.source_option == "cdn" %}
+	{% set m_css_source = 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css' %}
+	{% set f_css_source = 'theme://css/font-awesome.min.css' %}
+	{% set m_js_source = 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js' %}
+{% endif %}
+
 <!DOCTYPE html>
 <html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
 <head>
@@ -16,15 +34,15 @@
 	<link rel="canonical" href="{{ page.url(true, true) }}" />
 
 	{% block stylesheets %}
-		{% do assets.addCss('theme://css/materialize.css', 100) %}
+		{% do assets.addCss(m_css_source, 100) %}
 		{% do assets.addCss('theme://css/custom.css', 99) %}
-		{% do assets.addCss('theme://css/font-awesome.css', 98) %}
+		{% do assets.addCss(f_css_source, 98) %}
 	{% endblock %}
 	{{ assets.css() }}
 
 	{% block javascripts %}
 		{% do assets.addJs('jquery', 100) %}
-		{% do assets.addJs('theme://js/materialize.js', 99) %}
+		{% do assets.addJs(m_js_source, 99) %}
 		{% do assets.addJs('theme://js/site.js', 98) %}
 	{% endblock %}
 	{{ assets.js() }}
